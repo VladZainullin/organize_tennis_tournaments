@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-dwptg@=j)c-s$-)$_ci_!5fb_er-l(8(6p%_#*+_gao$y_22h('
@@ -16,6 +15,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'games',
+    'organizers',
+    'referees',
+    'tournaments'
 ]
 
 MIDDLEWARE = [
@@ -26,10 +29,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'games',
-    'organizers',
-    'referees',
-    'tournaments'
 ]
 
 ROOT_URLCONF = 'organize_tennis_tournaments.urls'

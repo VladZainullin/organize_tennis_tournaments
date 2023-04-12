@@ -4,17 +4,23 @@ from tournaments.models import Tournament
 
 
 class Referee(models.Model):
-    id: int = models.IntegerField(primary_key=True)
-    name: str = models.CharField(max_length=50)
-    surname: str = models.CharField(max_length=50)
-    patronymic: str = models.CharField(max_length=50)
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=50)
+    surname = models.CharField(max_length=50)
+    patronymic = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'referees'
 
 
 class TournamentReferee(models.Model):
-    id: int = models.IntegerField(primary_key=True)
-    referee: Referee = models.ForeignKey(
-        Referee,
+    id = models.IntegerField(primary_key=True)
+    referee = models.ForeignKey(
+        to='referees.Referee',
         on_delete=models.CASCADE)
-    tournament: Tournament = models.ForeignKey(
-        to=Tournament,
+    tournament = models.ForeignKey(
+        to='tournaments.Tournament',
         on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'tournament_referee'
