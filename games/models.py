@@ -1,6 +1,6 @@
 from django.db import models
 
-from turnaments.models import Tournament
+from tournaments.models import Tournament
 from referees.models import TournamentReferee
 
 
