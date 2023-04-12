@@ -1,5 +1,8 @@
 from django.db import models
 
+from turnaments.models import Tournament
+from referees.models import TournamentReferee
+
 
 class Game(models.Model):
     id: int = models.IntegerField(primary_key=True)
