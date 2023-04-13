@@ -15,6 +15,8 @@ class Player(models.Model):
 
     class Meta:
         db_table = 'players'
+        verbose_name = 'Игрок'
+        verbose_name_plural = 'Игроки'
 
 
 class Game(models.Model):
@@ -29,6 +31,8 @@ class Game(models.Model):
 
     class Meta:
         db_table = 'games'
+        verbose_name = 'Партия'
+        verbose_name_plural = 'Партии'
 
 
 class GamePlayer(models.Model):
@@ -42,3 +46,5 @@ class GamePlayer(models.Model):
 
     class Meta:
         db_table = 'game_players'
+        verbose_name = 'Партия игроков'
+        verbose_name_plural = 'Партии игроков'

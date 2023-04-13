@@ -7,3 +7,5 @@ class Organizer(models.Model):
 
     class Meta:
         db_table = 'organizers'
+        verbose_name = 'Организатор'
+        verbose_name_plural = 'Организаторы'

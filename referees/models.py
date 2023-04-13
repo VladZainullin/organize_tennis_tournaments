@@ -11,6 +11,8 @@ class Referee(models.Model):
 
     class Meta:
         db_table = 'referees'
+        verbose_name = 'Судья'
+        verbose_name_plural = 'Судьи'
 
 
 class TournamentReferee(models.Model):
@@ -24,3 +26,5 @@ class TournamentReferee(models.Model):
 
     class Meta:
         db_table = 'tournament_referees'
+        verbose_name = 'Судья турнира'
+        verbose_name_plural = 'Судьи турниров'
