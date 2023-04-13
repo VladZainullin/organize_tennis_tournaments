@@ -8,11 +8,19 @@ class Player(models.Model):
     id: int = models.IntegerField(
         primary_key=True,
         verbose_name='Идентификатор')
-    name: str = models.CharField(max_length=50)
-    surname: str = models.CharField(max_length=50)
-    patronymic: str = models.CharField(max_length=50)
+    name: str = models.CharField(
+        max_length=50,
+        verbose_name='Имя')
+    surname: str = models.CharField(
+        max_length=50,
+        verbose_name='Фамилия')
+    patronymic: str = models.CharField(
+        max_length=50,
+        verbose_name='Отчество',
+        null=True)
     tournament = models.ForeignKey(
         to='tournaments.Tournament',
+        verbose_name='Турнир',
         on_delete=models.CASCADE)
 
     class Meta:
