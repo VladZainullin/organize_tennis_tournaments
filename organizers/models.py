@@ -6,4 +6,4 @@ class Organizer(models.Model):
     title: int = models.CharField(max_length=50)
 
     class Meta:
-        db_table = 'organizer'
+        db_table = 'organizers'

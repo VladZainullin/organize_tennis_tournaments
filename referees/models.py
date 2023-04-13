@@ -23,4 +23,4 @@ class TournamentReferee(models.Model):
         on_delete=models.CASCADE)
 
     class Meta:
-        db_table = 'tournament_referee'
+        db_table = 'tournament_referees'

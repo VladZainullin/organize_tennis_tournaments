@@ -13,3 +13,6 @@ class Tournament(models.Model):
     organizer = models.ForeignKey(
         to='organizers.Organizer',
         on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'tournaments'

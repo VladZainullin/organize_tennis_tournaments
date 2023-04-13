@@ -13,6 +13,9 @@ class Player(models.Model):
         to='tournaments.Tournament',
         on_delete=models.CASCADE)
 
+    class Meta:
+        db_table = 'players'
+
 
 class Game(models.Model):
     id: int = models.IntegerField(primary_key=True)
@@ -24,6 +27,9 @@ class Game(models.Model):
         to=TournamentReferee,
         on_delete=models.CASCADE)
 
+    class Meta:
+        db_table = 'games'
+
 
 class GamePlayer(models.Model):
     id: int = models.IntegerField(primary_key=True)
@@ -33,3 +39,6 @@ class GamePlayer(models.Model):
     game: Game = models.ForeignKey(
         to=Game,
         on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'game_players'

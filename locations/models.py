@@ -6,7 +6,7 @@ class Location(models.Model):
     title = models.CharField(max_length=50)
 
     class Meta:
-        db_table = 'location'
+        db_table = 'locations'
 
 
 class LocationTournament(models.Model):
@@ -19,4 +19,4 @@ class LocationTournament(models.Model):
         on_delete=models.CASCADE)
 
     class Meta:
-        db_table = 'location_tournament'
+        db_table = 'location_tournaments'
