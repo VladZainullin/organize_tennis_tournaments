@@ -7,7 +7,8 @@ class Location(models.Model):
 
     class Meta:
         db_table = 'locations'
-        verbose_name = 'Локации'
+        verbose_name = 'Локация'
+        verbose_name_plural = 'Локации'
 
 
 class LocationTournament(models.Model):
