@@ -5,7 +5,9 @@ from referees.models import TournamentReferee
 
 
 class Player(models.Model):
-    id: int = models.IntegerField(primary_key=True)
+    id: int = models.IntegerField(
+        primary_key=True,
+        verbose_name='Идентификатор')
     name: str = models.CharField(max_length=50)
     surname: str = models.CharField(max_length=50)
     patronymic: str = models.CharField(max_length=50)
@@ -20,13 +22,17 @@ class Player(models.Model):
 
 
 class Game(models.Model):
-    id: int = models.IntegerField(primary_key=True)
+    id: int = models.IntegerField(
+        primary_key=True,
+        verbose_name='Идентификатор')
     winner_player: Player = models.ForeignKey(
         to=Player,
+        verbose_name='Победитель партии',
         on_delete=models.CASCADE,
         null=True)
     tournament_referee: TournamentReferee = models.ForeignKey(
         to=TournamentReferee,
+        verbose_name='Судья партии',
         on_delete=models.CASCADE)
 
     class Meta:
@@ -36,12 +42,16 @@ class Game(models.Model):
 
 
 class GamePlayer(models.Model):
-    id: int = models.IntegerField(primary_key=True)
+    id: int = models.IntegerField(
+        primary_key=True,
+        verbose_name='Идентификатор')
     player: Player = models.ForeignKey(
         to=Player,
+        verbose_name='Игрок',
         on_delete=models.CASCADE)
     game: Game = models.ForeignKey(
         to=Game,
+        verbose_name='Игра',
         on_delete=models.CASCADE)
 
     class Meta:

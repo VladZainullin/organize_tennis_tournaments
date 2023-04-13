@@ -4,10 +4,18 @@ from tournaments.models import Tournament
 
 
 class Referee(models.Model):
-    id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=50)
-    surname = models.CharField(max_length=50)
-    patronymic = models.CharField(max_length=50)
+    id: int = models.IntegerField(
+        primary_key=True,
+        verbose_name='Идентификатор')
+    name = models.CharField(
+        max_length=50,
+        verbose_name='Имя')
+    surname = models.CharField(
+        max_length=50,
+        verbose_name='Фамилия')
+    patronymic = models.CharField(
+        max_length=50,
+        verbose_name='Отчество')
 
     class Meta:
         db_table = 'referees'
@@ -16,12 +24,16 @@ class Referee(models.Model):
 
 
 class TournamentReferee(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id: int = models.IntegerField(
+        primary_key=True,
+        verbose_name='Идентификатор')
     referee = models.ForeignKey(
         to='referees.Referee',
+        verbose_name='Судья',
         on_delete=models.CASCADE)
     tournament = models.ForeignKey(
         to='tournaments.Tournament',
+        verbose_name='Турнир',
         on_delete=models.CASCADE)
 
     class Meta:
