@@ -15,9 +15,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'games.apps.GamesConfig',
-    'locations.apps.LocationsConfig',
-    'organizers.apps.OrganizersConfig',
+    'games',
+    'locations',
+    'organizers',
     'referees',
     'tournaments',
 ]
