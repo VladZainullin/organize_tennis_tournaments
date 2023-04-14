@@ -22,7 +22,7 @@ class Tournament(models.Model):
         to='organizers.Organizer',
         verbose_name='Организатор',
         on_delete=models.CASCADE),
-    image = models.ImageField(upload_to='images/%Y/%m/%d')
+    image = models.ImageField(upload_to='tournaments/images/%Y/%m/%d')
 
     class Meta:
         db_table = 'tournaments'
