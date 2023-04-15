@@ -10,6 +10,9 @@ class Tournament(models.Model):
     title = models.CharField(
         max_length=50,
         verbose_name='Наименование')
+    description = models.CharField(
+        max_length=5000,
+        verbose_name='Описание')
     date_start_registration = models.DateField(
         verbose_name='Дата начала регистрации')
     date_end_registration = models.DateField(
