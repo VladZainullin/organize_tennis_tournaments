@@ -34,7 +34,7 @@ class Game(models.Model):
         primary_key=True,
         verbose_name='Идентификатор')
     winner_player: Player = models.ForeignKey(
-        to=Player,
+        to='tournaments.TournamentPlayer',
         verbose_name='Победитель партии',
         on_delete=models.CASCADE,
         null=True)
@@ -54,12 +54,12 @@ class GamePlayer(models.Model):
         primary_key=True,
         verbose_name='Идентификатор')
     player: Player = models.ForeignKey(
-        to=Player,
+        to='tournaments.TournamentPlayer',
         verbose_name='Игрок',
         on_delete=models.CASCADE)
     game: Game = models.ForeignKey(
         to=Game,
-        verbose_name='Игра',
+        verbose_name='Партия',
         on_delete=models.CASCADE)
 
     class Meta:

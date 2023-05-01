@@ -31,3 +31,22 @@ class Tournament(models.Model):
         db_table = 'tournaments'
         verbose_name = 'Турнир'
         verbose_name_plural = 'Турниры'
+
+
+class TournamentPlayer(models.Model):
+    id: int = models.IntegerField(
+        primary_key=True,
+        verbose_name='Идентификатор'),
+    player = models.ForeignKey(
+        to='games.Player',
+        verbose_name='Игрок',
+        on_delete=models.CASCADE),
+    tournament = models.ForeignKey(
+        to=Tournament,
+        verbose_name='Турнир',
+        on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'tournament_players'
+        verbose_name = 'Участник турнира'
+        verbose_name_plural = 'Участники турнира'
