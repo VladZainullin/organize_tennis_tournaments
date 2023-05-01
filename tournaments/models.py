@@ -1,7 +1,5 @@
 from django.db import models
 
-from organizers.models import Organizer
-
 
 class Tournament(models.Model):
     id: int = models.IntegerField(
@@ -36,14 +34,14 @@ class Tournament(models.Model):
 class TournamentPlayer(models.Model):
     id: int = models.IntegerField(
         primary_key=True,
-        verbose_name='Идентификатор'),
-    player = models.ForeignKey(
-        to='games.Player',
-        verbose_name='Игрок',
-        on_delete=models.CASCADE),
+        verbose_name='Идентификатор')
     tournament = models.ForeignKey(
         to=Tournament,
         verbose_name='Турнир',
+        on_delete=models.CASCADE)
+    player = models.ForeignKey(
+        to='games.Player',
+        verbose_name='Игрок',
         on_delete=models.CASCADE)
 
     class Meta:

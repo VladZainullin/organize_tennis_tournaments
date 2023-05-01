@@ -1,8 +1,5 @@
 from django.db import models
 
-from tournaments.models import Tournament
-from referees.models import TournamentReferee
-
 
 class Player(models.Model):
     id: int = models.IntegerField(
@@ -38,8 +35,8 @@ class Game(models.Model):
         verbose_name='Победитель партии',
         on_delete=models.CASCADE,
         null=True)
-    tournament_referee: TournamentReferee = models.ForeignKey(
-        to=TournamentReferee,
+    tournament_referee = models.ForeignKey(
+        to='referees.TournamentReferee',
         verbose_name='Судья партии',
         on_delete=models.CASCADE)
 
@@ -53,12 +50,12 @@ class GamePlayer(models.Model):
     id: int = models.IntegerField(
         primary_key=True,
         verbose_name='Идентификатор')
-    player: Player = models.ForeignKey(
+    tournament_player = models.ForeignKey(
         to='tournaments.TournamentPlayer',
         verbose_name='Игрок',
         on_delete=models.CASCADE)
-    game: Game = models.ForeignKey(
-        to=Game,
+    game = models.ForeignKey(
+        to='games.Game',
         verbose_name='Партия',
         on_delete=models.CASCADE)
 
