@@ -2,9 +2,6 @@ from django.db import models
 
 
 class Tournament(models.Model):
-    id: int = models.IntegerField(
-        primary_key=True,
-        verbose_name='Идентификатор')
     title = models.CharField(
         max_length=50,
         verbose_name='Наименование')
@@ -32,9 +29,6 @@ class Tournament(models.Model):
 
 
 class TournamentPlayer(models.Model):
-    id: int = models.IntegerField(
-        primary_key=True,
-        verbose_name='Идентификатор')
     tournament = models.ForeignKey(
         to=Tournament,
         verbose_name='Турнир',

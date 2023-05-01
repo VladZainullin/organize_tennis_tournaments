@@ -4,9 +4,6 @@ from tournaments.models import Tournament
 
 
 class Referee(models.Model):
-    id: int = models.IntegerField(
-        primary_key=True,
-        verbose_name='Идентификатор')
     name = models.CharField(
         max_length=50,
         verbose_name='Имя')
@@ -24,9 +21,6 @@ class Referee(models.Model):
 
 
 class TournamentReferee(models.Model):
-    id: int = models.IntegerField(
-        primary_key=True,
-        verbose_name='Идентификатор')
     referee = models.ForeignKey(
         to='referees.Referee',
         verbose_name='Судья',

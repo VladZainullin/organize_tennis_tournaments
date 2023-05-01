@@ -2,9 +2,6 @@ from django.db import models
 
 
 class Location(models.Model):
-    id: int = models.IntegerField(
-        primary_key=True,
-        verbose_name='Идентификатор'),
     title = models.CharField(
         max_length=50,
         verbose_name='Наименование')
@@ -16,9 +13,6 @@ class Location(models.Model):
 
 
 class LocationTournament(models.Model):
-    id: int = models.IntegerField(
-        primary_key=True,
-        verbose_name='Идентификатор'),
     location = models.ForeignKey(
         to=Location,
         verbose_name='Место проведения',
