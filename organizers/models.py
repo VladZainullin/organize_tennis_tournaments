@@ -1,12 +1,10 @@
-from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.contrib.auth.models import AbstractUser, Group, Permission, User
 from django.db import models
 
 
-class Organizer(AbstractUser):
+class Organizer(models.Model):
     title = models.CharField(max_length=50)
-
-    groups = models.ManyToManyField(Group, related_name='organizers')
-    user_permissions = models.ManyToManyField(Permission, related_name='organizers')
+    user = models.OneToOneField(to=User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.username

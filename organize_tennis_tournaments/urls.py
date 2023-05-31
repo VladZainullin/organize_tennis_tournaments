@@ -5,8 +5,7 @@ from organize_tennis_tournaments.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home', home_view, name='home'),
-    path('register/', register, name='register'),
+    path('home/', home_view, name='home'),
 
     path('', include('organizers.urls'))
 ]
