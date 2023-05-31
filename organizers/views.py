@@ -10,4 +10,4 @@ def register_organizer(request):
     else:
         form = OrganizerRegistrationForm()
 
-    return render(request, 'registration.html', {'form': form})
+    return render(request, 'authentication/registration/register-organizer.html', {'form': form})
